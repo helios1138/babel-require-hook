@@ -1,0 +1,19 @@
+{
+  "name": "babel-require-hook",
+  "version": "1.0.0",
+  "description": "custom babel require hook",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helios1138/babel-require-hook.git"
+  },
+  "author": "Helios <revan.den@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helios1138/babel-require-hook/issues"
+  },
+  "homepage": "https://github.com/helios1138/babel-require-hook#readme",
+  "dependencies": {
+    "babel-core": "^5.8.22"
+  }
+}
