@@ -1,6 +1,6 @@
 {
   "name": "babel-require-hook",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "custom babel require hook",
   "main": "build/index.js",
   "scripts": {
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/helios1138/babel-require-hook#readme",
   "dependencies": {
-    "babel-core": "^5.8.22"
+    "babel-core": "^5.8.22",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "babel": "^5.8.21"
