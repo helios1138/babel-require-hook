@@ -1,4 +1,5 @@
-import 'babel-core/polyfill';
+require('babel-core/polyfill');
+
 import fs from 'fs';
 import {compile} from './compile';
 

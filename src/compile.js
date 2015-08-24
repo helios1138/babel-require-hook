@@ -1,4 +1,4 @@
-import babel from 'babel-core';
+let babel = require('babel-core');
 
 export function compile(filename) {
   let {code} = babel.transformFileSync(filename, { optional: ['bluebirdCoroutines'] });
