@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import mkdirp from 'mkdirp';
 
-let cacheDir = path.resolve(__dirname, './cache');
+let cacheDir = path.resolve(__dirname, '../cache');
 mkdirp.sync(cacheDir);
 
 function encode(string) {
