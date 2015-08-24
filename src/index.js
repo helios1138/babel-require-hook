@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = function (options) {
   var babel = require('babel-core');
   var fs = require('fs');
 
