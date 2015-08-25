@@ -4,7 +4,7 @@ Promise.coroutine.addYieldHandler((value) => {
   if (Array.isArray(value)) {
     return Promise.all(value);
   }
-  else if (typeof value === 'object') {
+  else if (typeof value === 'object' && value.constructor === Object) {
     return Promise.props(value);
   }
   else {
