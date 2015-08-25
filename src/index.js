@@ -1,10 +1,8 @@
 require('babel-core/polyfill');
 
 import fs from 'fs';
-import Promise from 'bluebird';
 import {compile} from './compile';
-
-Promise.coroutine.addYieldHandler((value) => Promise.resolve(value));
+import './register-yield-handlers';
 
 let options = { ignore: /node_modules/ };
 
