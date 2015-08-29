@@ -1,31 +1,33 @@
 import fs from 'fs';
 import path from 'path';
 import mkdirp from 'mkdirp';
+import {flags} from './flags';
 
 let cacheDir = path.resolve(__dirname, '../cache');
 mkdirp.sync(cacheDir);
 
 function encode(string) {
+  console.log(string);
   return new Buffer(string).toString('base64');
 }
 
-function getKey(filename) {
-  let stat = fs.statSync(filename);
-  let key = `${filename}.${+stat.mtime}`;
-
-  return `${cacheDir}/${encode(key)}.cache`;
+function getCacheFilename(filename) {
+  let cacheKey = encode(`${filename}[${flags.generatorSupport}]`);
+  return `${cacheDir}/${cacheKey}.cache`;
 }
 
 export var cache = {
   get(filename){
-    let key = getKey(filename);
+    let cacheFilename = getCacheFilename(filename);
 
-    if (fs.existsSync(key)) {
-      return fs.readFileSync(key).toString();
+    if (!fs.existsSync(cacheFilename) || +fs.statSync(filename).mtime > +fs.statSync(cacheFilename).mtime) {
+      return;
     }
+
+    return fs.readFileSync(cacheFilename).toString();
   },
 
   put(filename, value){
-    fs.writeFileSync(getKey(filename), value);
+    fs.writeFileSync(getCacheFilename(filename), value);
   }
 };
