@@ -7,7 +7,6 @@ let cacheDir = path.resolve(__dirname, '../cache');
 mkdirp.sync(cacheDir);
 
 function encode(string) {
-  console.log(string);
   return new Buffer(string).toString('base64');
 }
 
