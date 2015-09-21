@@ -1,6 +1,6 @@
 {
   "name": "babel-require-hook",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "custom babel require hook",
   "main": "build/index.js",
   "scripts": {
